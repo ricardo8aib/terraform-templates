@@ -21,3 +21,13 @@ create-airbyte-ec2: ## Create infrastructure - airbyte EC2
 destroy-airbyte-ec2: ## Destroy infrastructure - airbyte EC2
 	(cd templates/airbyte-ec2; terraform destroy -auto-approve)
 	rm -rf templates/airbyte-ec2/keys/*.pem
+
+.PHONY: create-airflow-ec2
+create-airflow-ec2: ## Create infrastructure - airflow EC2
+	(cd templates/airflow-ec2; terraform init; terraform apply -auto-approve)
+	chmod 600 templates/airflow-ec2/keys/*.pem
+
+.PHONY: destroy-airflow-ec2
+destroy-airflow-ec2: ## Destroy infrastructure - airflow EC2
+	(cd templates/airflow-ec2; terraform destroy -auto-approve)
+	rm -rf templates/airflow-ec2/keys/*.pem
