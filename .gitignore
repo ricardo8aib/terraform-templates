@@ -1,0 +1,14 @@
+# .env files
+*.env
+
+# TF files
+.terraform
+*.lock.hcl
+*.tfstate.backup
+terraform.tfstate
+
+# Pychache files
+__pycache__
+
+# .pem files
+*.pem
