@@ -31,3 +31,11 @@ create-airflow-ec2: ## Create infrastructure - airflow EC2
 destroy-airflow-ec2: ## Destroy infrastructure - airflow EC2
 	(cd templates/airflow-ec2; terraform destroy -auto-approve)
 	rm -rf templates/airflow-ec2/keys/*.pem
+
+.PHONY: create-s3-bucket
+create-s3-bucket: ## Create infrastructure - Simple S3 bucket
+	(cd templates/s3-bucket; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-s3-bucket
+destroy-s3-bucket: ## Destroy infrastructure - Simple S3 bucket
+	(cd templates/s3-bucket; terraform destroy -auto-approve)
