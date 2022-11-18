@@ -1,8 +1,8 @@
-# Airbyte EC2 Instance
+# Airflow EC2 Instance
 
 ## General description
 
-This template generates an EC2 instance with Airflow running on the `8000 port`.
+This template generates an EC2 instance with Airflow running on the `8080 port`.
 The generated instance has a security group that allows access and egress from all ports. This can be changed, however, for security purposes in the `main.tf` file.
 
 The instance installs `docker` and `docker-compose` during the start-up. Other tools
@@ -24,12 +24,12 @@ terraform apply -auto-approve
 
 ## Accessing the Airflow Web App
 
-Once the Airbyte instance is `Running`, it's possible to access the Airflow Web App through the instance `Public IPv4 address` and the `port 8000`.  
-The user is `airbyte` and the password is `password`.
+Once the Airflow instance is `Running`, it's possible to access the Airflow Web App through the instance `Public IPv4 address` and the `port 8080`.  
+The user is `airflow` and the password is `airflow`.
 
-![Airbyte IP](../../images/airbyte/airbyte-ip.png)
+![Airflow IP](../../images/airflow/airflow-ip.png)
 
-![Airbyte log in](../../images/airbyte/airbyte-login.png)
+![Airflow log in](../../images/airflow/airflow-login.png)
 
 ## Deleteing the instance
 
