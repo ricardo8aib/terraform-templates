@@ -15,7 +15,7 @@ The `AMI`, `instance type` and `instance size` can be also set there. This templ
 
 ## Starting the instance
 
-This instance con be initialized using the make command `make create-airbyte-ec2` from the root directory of this repo or by running the following command within this directory:
+This instance can be initialized using the make command `make create-airbyte-ec2` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform init
@@ -33,7 +33,7 @@ The user is `airbyte` and the password is `password`.
 
 ## Deleteing the instance
 
-This instance con be deleted using the make command `make destroy-airbyte-ec2` from the root directory of this repo or by running the following command within this directory:
+This instance can be deleted using the make command `make destroy-airbyte-ec2` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve
