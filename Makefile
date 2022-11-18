@@ -39,3 +39,12 @@ create-s3-bucket: ## Create infrastructure - Simple S3 bucket
 .PHONY: destroy-s3-bucket
 destroy-s3-bucket: ## Destroy infrastructure - Simple S3 bucket
 	(cd templates/s3-bucket; terraform destroy -auto-approve)
+
+.PHONY: create-simple-lambda
+create-simple-lambda: ## Create infrastructure - Simple S3 lambda
+	(cd templates/simple-lambda; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-simple-lambda
+destroy-simple-lambda: ## Destroy infrastructure - Simple S3 lambda
+	(cd templates/simple-lambda; terraform destroy -auto-approve)
+	rm -rf templates/simple-lambda/*.zip
