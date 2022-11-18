@@ -12,6 +12,12 @@ destroy-simple-ec2: ## Destroy infrastructure - Simple EC2
 	(cd templates/simple-ec2; terraform destroy -auto-approve)
 	rm -rf templates/simple-ec2/keys/*.pem
 
-.PHONY: extract-data
-extract-data: ## Extract data
-	poetry run python extraction/extraction.py
+.PHONY: create-airbyte-ec2
+create-airbyte-ec2: ## Create infrastructure - airbyte EC2
+	(cd templates/airbyte-ec2; terraform init; terraform apply -auto-approve)
+	chmod 600 templates/airbyte-ec2/keys/*.pem
+
+.PHONY: destroy-airbyte-ec2
+destroy-airbyte-ec2: ## Destroy infrastructure - airbyte EC2
+	(cd templates/airbyte-ec2; terraform destroy -auto-approve)
+	rm -rf templates/airbyte-ec2/keys/*.pem
