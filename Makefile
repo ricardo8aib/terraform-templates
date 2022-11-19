@@ -48,3 +48,12 @@ create-simple-lambda: ## Create infrastructure - Simple S3 lambda
 destroy-simple-lambda: ## Destroy infrastructure - Simple S3 lambda
 	(cd templates/simple-lambda; terraform destroy -auto-approve)
 	rm -rf templates/simple-lambda/*.zip
+
+.PHONY: create-triggered-lambda
+create-triggered-lambda: ## Create infrastructure - S3 triggered lambda
+	(cd templates/s3-triggered-lambda; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-triggered-lambda
+destroy-triggered-lambda: ## Destroy infrastructure - S3 triggered lambda
+	(cd templates/s3-triggered-lambda; terraform destroy -auto-approve)
+	rm -rf templates/s3-triggered-lambda/*.zip
