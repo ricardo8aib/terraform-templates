@@ -17,7 +17,7 @@ terraform init
 terraform apply -auto-approve
 ```
 
-## Deleteing the Lambda function
+## Deleting the Lambda function
 
 This instance can be deleted using the make command `make destroy-triggered-lambda` from the root directory of this repo or by running the following command within this directory:
 

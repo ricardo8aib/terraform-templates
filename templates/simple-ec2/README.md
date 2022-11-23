@@ -22,7 +22,7 @@ terraform init
 terraform apply -auto-approve
 ```
 
-## Deleteing the instance
+## Deleting the instance
 
 This instance can be deleted using the make command `make destroy-simple-ec2` from the root directory of this repo or by running the following command within this directory:
 

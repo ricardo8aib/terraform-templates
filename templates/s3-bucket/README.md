@@ -19,7 +19,7 @@ terraform init
 terraform apply -auto-approve
 ```
 
-## Deleteing the buucket
+## Deleting the buucket
 
 This bucket can be deleted using the make command `make destroy-s3-bucket` from the root directory of this repo or by running the following command within this directory:
 

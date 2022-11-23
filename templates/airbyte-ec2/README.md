@@ -31,7 +31,7 @@ The user is `airbyte` and the password is `password`.
 
 ![Airbyte log in](../../images/airbyte/airbyte-login.png)
 
-## Deleteing the instance
+## Deleting the instance
 
 This instance can be deleted using the make command `make destroy-airbyte-ec2` from the root directory of this repo or by running the following command within this directory:
 

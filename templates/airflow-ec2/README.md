@@ -31,7 +31,7 @@ The user is `airflow` and the password is `airflow`.
 
 ![Airflow log in](../../images/airflow/airflow-login.png)
 
-## Deleteing the instance
+## Deleting the instance
 
 This instance can be deleted using the make command `make destroy-airflow-ec2` from the root directory of this repo or by running the following command within this directory:
 
