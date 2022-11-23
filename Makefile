@@ -57,3 +57,12 @@ create-triggered-lambda: ## Create infrastructure - S3 triggered lambda
 destroy-triggered-lambda: ## Destroy infrastructure - S3 triggered lambda
 	(cd templates/s3-triggered-lambda; terraform destroy -auto-approve)
 	rm -rf templates/s3-triggered-lambda/*.zip
+
+.PHONY: create-psycopg2-lambda
+create-psycopg2-lambda: ## Create infrastructure - Psycopg2 lambda
+	(cd templates/psycopg2-lambda; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-psycopg2-lambda
+destroy-psycopg2-lambda: ## Destroy infrastructure - Psycopg2 lambda
+	(cd templates/psycopg2-lambda; terraform destroy -auto-approve)
+	rm -rf templates/psycopg2-lambda/*.zip
