@@ -19,7 +19,7 @@ EOF
 }
 
 # Create the Lambda function
-resource "aws_lambda_function" "lambda_transform_json" {
+resource "aws_lambda_function" "templates_triggered_lambda" {
 filename                       = "lambda_functions.zip"
 function_name                  = "${var.project}-lambda-function"
 role                           = aws_iam_role.deals_matcher_lambda_role.arn
