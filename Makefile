@@ -66,3 +66,12 @@ create-psycopg2-lambda: ## Create infrastructure - Psycopg2 lambda
 destroy-psycopg2-lambda: ## Destroy infrastructure - Psycopg2 lambda
 	(cd templates/psycopg2-lambda; terraform destroy -auto-approve)
 	rm -rf templates/psycopg2-lambda/*.zip
+
+.PHONY: create-s3-snowflake-stage
+create-s3-snowflake-stage: ## Create infrastructure - S3 Snowflake stage bucket
+	(cd templates/s3-snowflake-stage; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-s3-snowflake-stage
+destroy-s3-snowflake-stage: ## Destroy infrastructure - S3 Snowflake stage bucket
+	(cd templates/s3-snowflake-stage; terraform destroy -auto-approve)
+	rm -rf templates/s3-snowflake-stage/*.zip
