@@ -1,10 +1,11 @@
 # S3 Bucket
 resource "aws_s3_bucket" "staging_bucket" {
-  bucket = "${var.bucket_name}"
-  force_destroy = true
+  bucket = "${var.project}-staging-bucket"
+  acl    = "${var.acl}"
+  force_destroy = "${var.force-destroy}"
 
   tags = {
-    Name    = "${var.project}"
+    project    = "${var.project}"
   }
 }
 

@@ -13,7 +13,12 @@ variable "project" {
   description = "Project tag for the resources"
 }
 
-variable "bucket_name" {
+variable "acl" {
   type        = string
-  description = "Name of the bucket to store the data"
+  description = "The canned ACL to apply"
+}
+
+variable "force-destroy" {
+  type        = string
+  description = "A boolean that indicates all objects (including any locked objects) should be deleted from the bucket so that the bucket can be destroyed without error"
 }
