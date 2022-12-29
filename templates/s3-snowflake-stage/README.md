@@ -50,7 +50,7 @@ This module creates the AWS S3 bucket that will serve as Stage and the role that
     STORAGE_ALLOWED_LOCATIONS = ('s3://terraform-templates-snowflake-s3-bucket');
     ```
 
-2. Check the `STORAGE_AWS_IAM_USE_ARN` and the `STORAGE_AWS_EXTERNAL_ID`
+2. Check the `STORAGE_AWS_IAM_USER_ARN` and the `STORAGE_AWS_EXTERNAL_ID`
 
     With the proper Snowflake permissions execute the following code:
 
@@ -58,12 +58,12 @@ This module creates the AWS S3 bucket that will serve as Stage and the role that
     DESC integration terraform_templates_storage_integration;
     ```
 
-    In the resulting table, check and copy the `property_value` of `STORAGE_AWS_IAM_USE_ARN` and `STORAGE_AWS_EXTERNAL_ID`.
-    The `STORAGE_AWS_IAM_USE_ARN` should look like `arn:aws:iam::090302819344:user/whp20000-s` and the `STORAGE_AWS_EXTERNAL_ID` should look like `DUB81018_SFCRole=2_jnslNPeZg4ENN7/dI0e3m3cuS80=`.
+    In the resulting table, check and copy the `property_value` of `STORAGE_AWS_IAM_USER_ARN` and `STORAGE_AWS_EXTERNAL_ID`.
+    The `STORAGE_AWS_IAM_USER_ARN` should look like `arn:aws:iam::090302819344:user/whp20000-s` and the `STORAGE_AWS_EXTERNAL_ID` should look like `DUB81018_SFCRole=2_jnslNPeZg4ENN7/dI0e3m3cuS80=`.
 
 3. Configure the IAM Role Trust relationship
 
-    This step requires going to the AWS IAM console, selecting the previously created role, and editing the `Trust Relationship` with the `STORAGE_AWS_IAM_USE_ARN` and `STORAGE_AWS_EXTERNAL_ID` values obtained from the previous step.
+    This step requires going to the AWS IAM console, selecting the previously created role, and editing the `Trust Relationship` with the `STORAGE_AWS_IAM_USER_ARN` and `STORAGE_AWS_EXTERNAL_ID` values obtained from the previous step.
 
     ```JSON
         {
@@ -72,7 +72,7 @@ This module creates the AWS S3 bucket that will serve as Stage and the role that
         {
         "Effect": "Allow",
         "Principal": {
-            "AWS": "<STORAGE_AWS_IAM_USE_ARN>"
+            "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
         },
         "Action": "sts:AssumeRole",
         "Condition": {
