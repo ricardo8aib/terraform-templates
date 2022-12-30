@@ -51,12 +51,19 @@ resource "aws_iam_policy" "snowflake_s3_access_policy" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "s3:GetObject",
                 "s3:ListBucket",
-                "s3:GetBucketLocation",
-                "s3:GetObjectVersion"
+                "s3:GetBucketLocation"
             ],
             "Resource": "${aws_s3_bucket.stage_bucket.arn}"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "${aws_s3_bucket.stage_bucket.arn}/*"
         }
     ]
 }
