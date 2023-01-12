@@ -4,7 +4,6 @@ resource "aws_security_group" "ec2_security_group" {
   description = "Security group for EC2 instance"
 
   tags = {
-    Name    = "${var.project}-ec2-sg"
     project = var.project
   }
 
