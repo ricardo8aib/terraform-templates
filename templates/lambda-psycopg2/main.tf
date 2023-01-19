@@ -28,7 +28,7 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy_attache
 resource "aws_lambda_function" "templates_lambda" {
 filename                       = "lambda_functions.zip"
 function_name                  = "${var.project}-psycopg2-lambda"
-role                           = aws_iam_role.deals_matcher_lambda_role.arn
+role                           = aws_iam_role.psycopg2_lambda_role.arn
 handler                        = "${var.project}-lambda.lambda_handler"
 runtime                        = "python3.8"
 }
