@@ -18,6 +18,12 @@ assume_role_policy = <<EOF
 EOF
 }
 
+# Attach policy to Lambda Role
+resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy_attachement" {
+  role       = "${aws_iam_role.psycopg2_lambda_role.name}"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
 # Create the Lambda function
 resource "aws_lambda_function" "templates_lambda" {
 filename                       = "lambda_functions.zip"
