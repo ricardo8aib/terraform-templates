@@ -1,6 +1,0 @@
-profile = "profile"
-project = "terraform-templates"
-region  = "us-east-1"
-instance-size = "large"
-instance-type = "t2"
-instance-ami = "ami-052efd3df9dad4825"
