@@ -10,7 +10,7 @@ The `terraform.tfvars` contains basic configurations for the S3 bucket and the A
 
 ## Creating the Lambda function and the S3 bucket
 
-This function can be created using the make command `make create-triggered-lambda` from the root directory of this repo or by running the following command within this directory:
+This function can be created using the make command `make create-lambda-s3-triggered` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform init
@@ -19,7 +19,7 @@ terraform apply -auto-approve
 
 ## Deleting the Lambda function
 
-This instance can be deleted using the make command `make destroy-triggered-lambda` from the root directory of this repo or by running the following command within this directory:
+This instance can be deleted using the make command `make destroy-lambda-s3-triggered` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve

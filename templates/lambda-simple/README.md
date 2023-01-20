@@ -10,7 +10,7 @@ The `terraform.tfvars` contains basic configurations for the lambda and the AWS 
 
 ## Creating the Lambda function
 
-This function can be created using the make command `make create-simple-lambda` from the root directory of this repo or by running the following command within this directory:
+This function can be created using the make command `make create-lambda-simple` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform init
@@ -19,7 +19,7 @@ terraform apply -auto-approve
 
 ## Deleting the Lambda function
 
-This function can be deleted using the make command `make destroy-simple-lambda` from the root directory of this repo or by running the following command within this directory:
+This function can be deleted using the make command `make destroy-lambda-simple` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve
