@@ -31,5 +31,7 @@ function_name                  = "${var.project}-psycopg2-lambda"
 role                           = aws_iam_role.psycopg2_lambda_role.arn
 handler                        = "${var.project}-lambda.lambda_handler"
 runtime                        = "python3.8"
+timeout                        = 15
+memory_size                    = 128
 }
 
