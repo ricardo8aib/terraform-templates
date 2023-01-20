@@ -14,12 +14,13 @@ This repo contains commonly used terraform templates.
 
 ### AWS Elastic Cloud Compute (EC2)
 
-1. [EC2 Instance](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/simple-ec2)
-2. [EC2 Instance with Airflow](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/airflow-ec2)
-3. [EC2 Instance with Airbyte](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/airbyte-ec2)
+1. [EC2 Instance](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/ec2-simple)
+2. [EC2 Instance with Airflow](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/ec2-airflow)
+3. [EC2 Instance with Airbyte](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/ec2-airbyte)
 
 ### AWS Lambda
 
-1. [Lambda Function](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/simple-lambda)
-2. [Lambda Function triggered by S3 Bucket](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/s3-triggered-lambda)
-3. [Lambda Function with Psycopg2](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/psycopg2-lambda)
+1. [Lambda Function](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-simple)
+2. [Lambda Function triggered by S3 Bucket](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-s3-triggered)
+3. [Lambda Function with Psycopg2](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-psycopg2)
+4. [Lambda Function with Pandas](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-pandas)
