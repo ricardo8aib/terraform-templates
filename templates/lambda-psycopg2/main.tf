@@ -1,4 +1,4 @@
-# Lambda role to assing to the Lambda function
+# IAM role for the Lambda function
 resource "aws_iam_role" "psycopg2_lambda_role" {
 name   = "${var.project}-psycopg2-lambda-role"
 assume_role_policy = <<EOF

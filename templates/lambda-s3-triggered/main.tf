@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "staging_bucket" {
   }
 }
 
-# Lambda role to assing to the Lambda function
+# IAM role for the Lambda function
 resource "aws_iam_role" "templates_lambda_role" {
 name   = "${var.project}-lambda-role"
 assume_role_policy = <<EOF
