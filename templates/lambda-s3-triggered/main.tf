@@ -82,6 +82,8 @@ role                           = aws_iam_role.templates_lambda_role.arn
 handler                        = "s3-triggered-lambda.lambda_handler"
 runtime                        = "python3.8"
 depends_on                     = [aws_iam_role_policy_attachment.attach_lambda_policy_to_lambda_role]
+timeout                        = 15
+memory_size                    = 128
 }
 
 # Add S3 bucket as trigger

@@ -25,5 +25,7 @@ function_name                  = "${var.project}-lambda-function"
 role                           = aws_iam_role.lambda_role.arn
 handler                        = "${var.project}-lambda.lambda_handler"
 runtime                        = "python3.8"
+timeout                        = 15
+memory_size                    = 128
 }
 
