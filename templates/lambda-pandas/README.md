@@ -10,7 +10,7 @@ The `terraform.tfvars` contains basic configurations for the lambda and the AWS 
 
 ### Important *
 
-In order to use the Pandas library, these terraform scripts create a layer using the AWS provided layer for Pandas. To use a custom version of pandas or any other library, refer the `lambda-custom-layer` template.
+In order to use the Pandas library, these terraform scripts create a layer using the AWS provided layer for Pandas. To use a another version of pandas or any other library, refer the [Lambda Custom Layer](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer) template.
 
 ## Creating the Lambda function
 
