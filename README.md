@@ -24,3 +24,4 @@ This repo contains commonly used terraform templates.
 2. [Lambda Function triggered by S3 Bucket](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-s3-triggered)
 3. [Lambda Function with Psycopg2](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-psycopg2)
 4. [Lambda Function with Pandas](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-pandas)
+5. [Lambda Function with custom layer](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer)
