@@ -84,3 +84,15 @@ create-lambda-pandas: ## Create infrastructure - Lambda Pandas
 destroy-lambda-pandas: ## Destroy infrastructure - Lambda Pandas
 	(cd templates/lambda-pandas; terraform destroy -auto-approve)
 	rm -rf templates/lambda-pandas/*.zip
+
+.PHONY: create-lambda-custom-layer
+create-lambda-custom-layer: ## Create infrastructure - Lambda custom layer
+	(cd templates/lambda-custom-layer/layer; sh get_layer_packages.sh)
+	(cd templates/lambda-custom-layer; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-custom-layer
+destroy-lambda-custom-layer: ## Destroy infrastructure - Lambda custom layer 
+	(cd templates/lambda-custom-layer; terraform destroy -auto-approve)
+	rm -rf templates/lambda-custom-layer/*.zip
+	rm -rf templates/lambda-custom-layer/layer/*.zip
+	rm -rf templates/lambda-custom-layer/layer/python
