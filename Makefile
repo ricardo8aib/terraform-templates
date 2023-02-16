@@ -96,3 +96,11 @@ destroy-lambda-custom-layer: ## Destroy infrastructure - Lambda custom layer
 	rm -rf templates/lambda-custom-layer/*.zip
 	rm -rf templates/lambda-custom-layer/layer/*.zip
 	rm -rf templates/lambda-custom-layer/layer/python
+
+.PHONY: create-dynamo-simple
+create-dynamo-simple: ## Create infrastructure - Dynamo simple
+	(cd templates/dynamo-simple; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-dynamo-simple
+destroy-dynamo-simple: ## Destroy infrastructure - Dynamo simple
+	(cd templates/dynamo-simple; terraform destroy -auto-approve)
