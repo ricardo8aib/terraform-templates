@@ -27,6 +27,9 @@ assume_role_policy = <<EOF
  ]
 }
 EOF
+tags = {
+    project    = "${var.project}"
+  }
 }
 
 # IAM Policy to attach to let the lambda function access S3
@@ -79,11 +82,12 @@ resource "aws_lambda_function" "templates_triggered_lambda" {
 filename                       = "lambda_functions.zip"
 function_name                  = "${var.project}-s3-triggered-lambda"
 role                           = aws_iam_role.templates_lambda_role.arn
-handler                        = "s3-triggered-lambda.lambda_handler"
+handler                        = "s3-triggered-lambda.lambda_handler" # Use the name of the .py file in lambdda_functions folder
 runtime                        = "python3.8"
 depends_on                     = [aws_iam_role_policy_attachment.attach_lambda_policy_to_lambda_role]
 timeout                        = 15
 memory_size                    = 128
+tags                           = {project = var.project}
 }
 
 # Add S3 bucket as trigger

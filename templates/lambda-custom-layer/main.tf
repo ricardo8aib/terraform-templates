@@ -36,7 +36,7 @@ resource "aws_lambda_function" "templates_lambda" {
 filename                       = "lambda_functions.zip"
 function_name                  = "${var.project}-lambda-custom-layer"
 role                           = aws_iam_role.custom_layer_lambda_role.arn
-handler                        = "${var.project}-lambda.lambda_handler"
+handler                        = "terraform-templates-lambda.lambda_handler"  # Use the name of the .py file in lambdda_functions folder
 runtime                        = "python3.8"
 timeout                        = 15
 memory_size                    = 128

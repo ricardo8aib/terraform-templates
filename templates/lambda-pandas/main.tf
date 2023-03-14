@@ -16,6 +16,7 @@ assume_role_policy = <<EOF
  ]
 }
 EOF
+tags = {project = var.project}
 }
 
 # Attach policy to Lambda Role
@@ -29,10 +30,11 @@ resource "aws_lambda_function" "templates_lambda" {
 filename                       = "lambda_functions.zip"
 function_name                  = "${var.project}-lambda-pandas"
 role                           = aws_iam_role.pandas_lambda_role.arn
-handler                        = "${var.project}-lambda.lambda_handler"
+handler                        = "terraform-templates-lambda.lambda_handler"  # Use the name of the .py file in lambdda_functions folder
 runtime                        = "python3.9"
 timeout                        = 15
 memory_size                    = 128
-layers                         = ["	arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python39:3"]  # AWS provided layer
+layers                         = ["arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python39:3"]  # AWS provided layer
+tags                           = {project = var.project}
 }
 
