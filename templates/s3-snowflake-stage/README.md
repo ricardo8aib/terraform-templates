@@ -2,7 +2,7 @@
 
 ## General description
 
-This template generates an S3 bucket. And the IAM role and policy required to let Snowflake access the bucket.
+This template generates an S3 bucket, and the IAM role and policy required to let Snowflake access the bucket.
 The generated bucket has a private ACL by default. This can be changed, however,  in the `terraform.tfvars` file.
 
 ## Set up
