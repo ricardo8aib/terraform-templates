@@ -14,7 +14,7 @@ Users can add more libraries and specify the versions by modifying the [requirem
 
 ## Creating the Lambda function
 
-This function can be created using the make command `make create-lambda-pandas` from the root directory of this repo or by running the following command within this directory:
+This function can be created using the make command `make create-lambda-custom-layer` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 (cd layer; sh get_layer_packages.sh)
@@ -24,7 +24,7 @@ terraform apply -auto-approve
 
 ## Deleting the Lambda function
 
-This function can be deleted using the make command `make destroy-lambda-pandas` from the root directory of this repo or by running the following command within this directory:
+This function can be deleted using the make command `make destroy-lambda-custom-layer` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve
