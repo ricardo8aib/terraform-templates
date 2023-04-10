@@ -104,3 +104,16 @@ create-dynamo-simple: ## Create infrastructure - Dynamo simple
 .PHONY: destroy-dynamo-simple
 destroy-dynamo-simple: ## Destroy infrastructure - Dynamo simple
 	(cd templates/dynamo-simple; terraform destroy -auto-approve)
+
+.PHONY: create-lambda-data-diff
+create-lambda-data-diff: ## Create infrastructure - Lambda data-diff
+	(cd templates/lambda-data-diff/layer; sh get_layer_packages.sh)
+	(cd templates/lambda-data-diff; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-data-diff
+destroy-lambda-data-diff: ## Destroy infrastructure - Lambda data-diff
+	(cd templates/lambda-data-diff; terraform destroy -auto-approve)
+	rm -rf templates/lambda-data-diff/*.zip
+	rm -rf templates/lambda-data-diff/*.zip
+	rm -rf templates/lambda-data-diff/layer/*.zip
+	rm -rf templates/lambda-data-diff/layer/python

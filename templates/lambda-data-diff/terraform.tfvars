@@ -1,0 +1,6 @@
+profile = "miad"
+project = "terraform-templates"
+region  = "us-east-1"
+lambda-role-name = "data-diff-lambda-role"
+lambda-layer-name = "data-diff-layer"
+lambda-function-name = "data-diff-lambda"
