@@ -117,3 +117,11 @@ destroy-lambda-data-diff: ## Destroy infrastructure - Lambda data-diff
 	rm -rf templates/lambda-data-diff/*.zip
 	rm -rf templates/lambda-data-diff/layer/*.zip
 	rm -rf templates/lambda-data-diff/layer/python
+
+.PHONY: create-using-env-file
+create-using-env-file: ## Create infrastructure - Using .env file
+	(cd templates/utils-using-env-file; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-using-env-file
+destroy-using-env-file: ## Destroy infrastructure - Using .env file
+	(cd templates/utils-using-env-file; terraform destroy -auto-approve)

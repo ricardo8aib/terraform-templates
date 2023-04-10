@@ -30,3 +30,7 @@ This repo contains commonly used terraform templates.
 ### AWS DynamoDB
 
 1. [DynamoDB Table](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/dynamo-simple)
+
+### Utils
+
+1. [Using .env files](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/utils-using-env-file)
