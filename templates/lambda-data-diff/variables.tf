@@ -18,11 +18,6 @@ variable "lambda-role-name" {
   description = "Name for the IAM role that will be assigned to the lambda function"
 }
 
-variable "lambda-layer-name" {
-  type        = string
-  description = "Name for the layer that the lambda function will use"
-}
-
 variable "lambda-function-name" {
   type        = string
   description = "Name for the lambda function"

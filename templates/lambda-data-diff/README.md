@@ -2,24 +2,23 @@
 
 ## General description
 
-This template generates a custom layer with `datadiff`, and a Lambda function that can use that layer.
+This template generates a lambda function from an ECR image that can use the `datadiff` library and connect to a Snowflake database.
 
 ## Set up
 
 The `terraform.tfvars` contains basic configurations for the lambda and the AWS profile. The `profile` variable indicates terraform which AWS profile should be used to deploy the infrastructure. By default, terraform checks the AWS profiles in `~/.aws/credentials`.
+Also, to avoid issues, make sure that the profaile used by terraform is the same as the default profile in `~/.aws/credentials`.
 
-### Important *
-
-Users can add more libraries and specify the versions by modifying the [requirements.txt](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer/layer/requirements.txt) file. The [get_layer_packages.sh](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer/layer/get_layer_packages.sh) script creates the layer using Docker to get Lambda-compatible versions of libraries from the [requirements.txt](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer/layer/requirements.txt) file. By default, the only library in the [requirements.txt](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer/layer/requirements.txt) file is sqeleton, which is required by `datadiff`.This template uses the `lambci/lambda:build-python3.8` public docker image. For more info, check the references.
+Users can add more libraries and specify the versions by modifying the [requirements.txt](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff/lambda_function/requirements.txt) file. The [push_image.sh](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff/push_image.sh) script builds the image using the lambda function in [app.py](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff/lambda_function/app.py) and the [Dockerfile](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff/lambda_function/Dockerfile).
 
 ## Creating the Lambda function
 
 This function can be created using the make command `make create-lambda-data-diff` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
-(cd layer; sh get_layer_packages.sh)
-terraform init
-terraform apply -auto-approve
+(terraform init; terraform apply -target=aws_ecr_repository.repository -auto-approve)
+(bash push_image.sh)
+(terraform init; terraform apply -auto-approve)
 ```
 
 ## Deleting the Lambda function
@@ -29,9 +28,3 @@ This function can be deleted using the make command `make destroy-lambda-data-di
 ``` bash
 terraform destroy -auto-approve
 ```
-
-## References
-
-- [Creating New AWS Lambda Layer For Python Pandas Library](https://medium.com/@qtangs/creating-new-aws-lambda-layer-for-python-pandas-library-348b126e9f3e)
-- [How to lightweight your Python AWS Lambda functions with AWS Lambda Layer, Docker, and Terraform](https://medium.com/wescale/how-to-lightweight-your-python-aws-lambda-functions-with-aws-lambda-layer-docker-and-terraform-b48602e76e8b)
-- [Resource: aws_lambda_layer_version](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version)

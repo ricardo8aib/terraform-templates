@@ -27,23 +27,16 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution_policy_attache
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# Custom layer
-resource "aws_lambda_layer_version" "templates_custom_layer" {
-  filename            = "layer/python-custom-layer.zip"
-  layer_name          = "${var.project}-${var.lambda-layer-name}"
-  compatible_runtimes = ["python3.9", "python3.8"]
-}
-
 # Create the Lambda function
 resource "aws_lambda_function" "templates_lambda" {
-filename                       = "lambda_functions.zip"
+image_uri                      = "${aws_ecr_repository.repository.repository_url}:latest"
 function_name                  = "${var.project}-${var.lambda-function-name}"
 role                           = aws_iam_role.data_diff_lambda_role.arn
-handler                        = "terraform-templates-lambda.lambda_handler"  # Use the name of the .py file in lambdda_functions folder
-runtime                        = "python3.8"
-timeout                        = 15
+architectures                  = ["arm64"]
+runtime                        = "python3.9"
+package_type                   = "Image"
+timeout                        = 360
 memory_size                    = 128
-layers                         = ["${aws_lambda_layer_version.templates_custom_layer.arn}"]
 tags                           = {project = var.project}
 }
 
