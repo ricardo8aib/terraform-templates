@@ -48,7 +48,7 @@ resource "aws_iam_policy" "snowflake_s3_access_policy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
+            "Sid": "",
             "Effect": "Allow",
             "Action": [
                 "s3:ListBucket",
@@ -57,7 +57,7 @@ resource "aws_iam_policy" "snowflake_s3_access_policy" {
             "Resource": "${aws_s3_bucket.stage_bucket.arn}"
         },
         {
-            "Sid": "VisualEditor1",
+            "Sid": "",
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject",
