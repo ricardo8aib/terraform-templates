@@ -13,6 +13,9 @@ resource "aws_security_group" "rds_security_group" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    project = var.project
+  }
 }
 
 # Create a RDS Database Instance
@@ -33,4 +36,7 @@ resource "aws_db_instance" "rds_instance" {
   vpc_security_group_ids = ["${aws_security_group.rds_security_group.id}"]
   skip_final_snapshot  = true
   publicly_accessible =  true
+  tags = {
+    project = var.project
+  }
 }
