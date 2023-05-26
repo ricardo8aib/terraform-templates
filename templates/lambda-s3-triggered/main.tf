@@ -42,7 +42,7 @@ resource "aws_iam_policy" "templates_lambda_access_policy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
+            "Sid": "",
             "Effect": "Allow",
             "Action": [
                 "s3:PutObject",
