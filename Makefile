@@ -122,3 +122,11 @@ create-using-env-file: ## Create infrastructure - Using .env file
 .PHONY: destroy-using-env-file
 destroy-using-env-file: ## Destroy infrastructure - Using .env file
 	(cd templates/utils-using-env-file; terraform destroy -auto-approve)
+
+.PHONY: create-rds-simple
+create-rds-simple: ## Create infrastructure - rds simple
+	(cd templates/rds-simple; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-rds-simple
+destroy-rds-simple: ## Destroy infrastructure - rds simple
+	(cd templates/rds-simple; terraform destroy -auto-approve)
