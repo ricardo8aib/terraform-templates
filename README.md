@@ -27,6 +27,11 @@ This repo contains commonly used terraform templates.
 5. [Lambda Function with custom layer](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer)
 6. [Lambda Function with datadiff](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff)
 
+### AWS RDS
+
+1. [RDS Simple](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/rds-simple)
+2. [RDS Proxy](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/rds-proxy)
+
 ### AWS DynamoDB
 
 1. [DynamoDB Table](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/dynamo-simple)
