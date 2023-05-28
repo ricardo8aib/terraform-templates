@@ -19,7 +19,7 @@ terraform apply -auto-approve
 
 ## Deleting the Lambda function
 
-This instance can be deleted using the make command `make destroy-lambda-s3-triggered` from the root directory of this repo or by running the following command within this directory:
+This function can be deleted using the make command `make destroy-lambda-s3-triggered` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve

@@ -138,3 +138,12 @@ create-rds-proxy: ## Create infrastructure - rds proxy
 .PHONY: destroy-rds-proxy
 destroy-rds-proxy: ## Destroy infrastructure - rds proxy
 	(cd templates/rds-proxy; terraform destroy -auto-approve)
+
+.PHONY: create-lambda-scheduled
+create-lambda-scheduled: ## Create infrastructure - scheduled S3 lambda
+	(cd templates/lambda-scheduled; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-scheduled
+destroy-lambda-scheduled: ## Destroy infrastructure - scheduled S3 lambda
+	(cd templates/lambda-scheduled; terraform destroy -auto-approve)
+	rm -rf templates/lambda-scheduled/*.zip
