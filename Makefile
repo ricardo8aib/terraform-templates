@@ -130,3 +130,11 @@ create-rds-simple: ## Create infrastructure - rds simple
 .PHONY: destroy-rds-simple
 destroy-rds-simple: ## Destroy infrastructure - rds simple
 	(cd templates/rds-simple; terraform destroy -auto-approve)
+
+.PHONY: create-rds-proxy
+create-rds-proxy: ## Create infrastructure - rds proxy
+	(cd templates/rds-proxy; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-rds-proxy
+destroy-rds-proxy: ## Destroy infrastructure - rds proxy
+	(cd templates/rds-proxy; terraform destroy -auto-approve)
