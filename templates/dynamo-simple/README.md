@@ -10,7 +10,7 @@ The `terraform.tfvars` contains basic configurations for the AWS profile. The `p
 
 ## Creating the DynamoDB table
 
-This function can be created using the make command `make create-dynamo-simple` from the root directory of this repo or by running the following command within this directory:
+This instance can be created using the make command `make create-dynamo-simple` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform init
@@ -19,7 +19,7 @@ terraform apply -auto-approve
 
 ## Deleting the DynamoDB table
 
-This function can be deleted using the make command `make destroy-dynamo-simple` from the root directory of this repo or by running the following command within this directory:
+This instance can be deleted using the make command `make destroy-dynamo-simple` from the root directory of this repo or by running the following command within this directory:
 
 ``` bash
 terraform destroy -auto-approve
