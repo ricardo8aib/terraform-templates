@@ -147,3 +147,13 @@ create-lambda-scheduled: ## Create infrastructure - scheduled S3 lambda
 destroy-lambda-scheduled: ## Destroy infrastructure - scheduled S3 lambda
 	(cd templates/lambda-scheduled; terraform destroy -auto-approve)
 	rm -rf templates/lambda-scheduled/*.zip
+
+.PHONY: create-lambda-ecr
+create-lambda-ecr: ## Create infrastructure - Lambda ecr 
+	(cd templates/lambda-ecr; terraform init; terraform apply -target=aws_ecr_repository.repository -auto-approve)
+	(cd templates/lambda-ecr; bash push_image.sh)
+	(cd templates/lambda-ecr; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-ecr
+destroy-lambda-ecr: ## Destroy infrastructure - Lambda ecr
+	(cd templates/lambda-ecr; terraform destroy -auto-approve)

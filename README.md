@@ -27,6 +27,7 @@ This repo contains commonly used terraform templates.
 5. [Lambda Function with custom layer](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-custom-layer)
 6. [Lambda Function with datadiff](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-data-diff)
 7. [Lambda Function with EventBridge Scheduler](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-scheduled)
+8. [Lambda Function from ECR Image](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-ecr)
 
 ### AWS RDS
 
