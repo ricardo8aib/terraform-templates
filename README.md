@@ -7,10 +7,13 @@ This repo contains commonly used terraform templates.
 
 ## Content
 
-### AWS Simple Storage Service (S3)
+### AWS DynamoDB
 
-1. [S3 Bucket](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/s3-bucket)
-2. [Snowflake S3 Bucket Stage](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/s3-snowflake-stage)
+1. [DynamoDB Table](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/dynamo-simple)
+
+### AWS Elastic Container Registry (ECR)
+
+1. [ECR Repository and Docker Image Push](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/ecr-and-image)
 
 ### AWS Elastic Cloud Compute (EC2)
 
@@ -34,9 +37,10 @@ This repo contains commonly used terraform templates.
 1. [RDS Simple](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/rds-simple)
 2. [RDS Proxy](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/rds-proxy)
 
-### AWS DynamoDB
+### AWS Simple Storage Service (S3)
 
-1. [DynamoDB Table](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/dynamo-simple)
+1. [S3 Bucket](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/s3-bucket)
+2. [Snowflake S3 Bucket Stage](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/s3-snowflake-stage)
 
 ### Utils
 
