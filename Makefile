@@ -157,3 +157,12 @@ create-lambda-ecr: ## Create infrastructure - Lambda ecr
 .PHONY: destroy-lambda-ecr
 destroy-lambda-ecr: ## Destroy infrastructure - Lambda ecr
 	(cd templates/lambda-ecr; terraform destroy -auto-approve)
+
+.PHONY: create-ecr-and-image
+create-ecr-and-image: ## Create infrastructure - ECR & Image
+	(cd templates/ecr-and-image; terraform init; terraform apply -auto-approve)
+	(cd templates/ecr-and-image; bash push_image.sh)
+
+.PHONY: destroy-ecr-and-image
+destroy-ecr-and-image: ## Destroy infrastructure - ECR & Image
+	(cd templates/ecr-and-image; terraform destroy -auto-approve)
