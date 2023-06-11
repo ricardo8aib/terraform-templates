@@ -6,7 +6,7 @@ This template generates a Lambda function using a Docker image stored in Amazon 
 
 ## Set up
 
-The `terraform.tfvars` contains basic configurations for the AWS profile. The `profile` variable indicates terraform which AWS profile should be used to deploy the infrastructure. The bucket name can be also set there. By default, terraform checks the AWS profiles in `~/.aws/credentials`.
+The `terraform.tfvars` contains basic configurations for the AWS profile. The `profile` variable indicates terraform which AWS profile should be used to deploy the infrastructure. By default, terraform checks the AWS profiles in `~/.aws/credentials`.
 
 ## Creating the Lambda function from ECR image
 
