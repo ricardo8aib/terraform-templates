@@ -166,3 +166,13 @@ create-ecr-and-image: ## Create infrastructure - ECR & Image
 .PHONY: destroy-ecr-and-image
 destroy-ecr-and-image: ## Destroy infrastructure - ECR & Image
 	(cd templates/ecr-and-image; terraform destroy -auto-approve)
+
+.PHONY: create-lambda-python-modules
+create-lambda-python-modules: ## Create infrastructure - Lambda with python modules
+	(cd templates/lambda-python-modules/infrastructure; terraform init; terraform apply -target=aws_ecr_repository.repository -auto-approve)
+	(cd templates/lambda-python-modules; bash push_image.sh)
+	(cd templates/lambda-python-modules/infrastructure; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-python-modules
+destroy-lambda-python-modules: ## Destroy infrastructure - Lambda with python modules
+	(cd templates/lambda-python-modules/infrastructure; terraform destroy -auto-approve)
