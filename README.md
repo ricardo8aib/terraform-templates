@@ -32,6 +32,7 @@ This repo contains commonly used terraform templates.
 7. [Lambda Function with EventBridge Scheduler](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-scheduled)
 8. [Lambda Function from ECR Image](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-ecr)
 9. [Lambda Function with Custom Python Modules](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-python-modules)
+10. [Lambda Function with API Gateway](https://github.com/ricardo8aib/terraform-templates/tree/main/templates/lambda-api-gateway)
 
 ### AWS RDS
 

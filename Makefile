@@ -176,3 +176,12 @@ create-lambda-python-modules: ## Create infrastructure - Lambda with python modu
 .PHONY: destroy-lambda-python-modules
 destroy-lambda-python-modules: ## Destroy infrastructure - Lambda with python modules
 	(cd templates/lambda-python-modules/infrastructure; terraform destroy -auto-approve)
+
+.PHONY: create-lambda-api-gateway
+create-lambda-api-gateway: ## Create infrastructure - Lambda API Gateway
+	(cd templates/lambda-api-gateway; terraform init; terraform apply -auto-approve)
+
+.PHONY: destroy-lambda-api-gateway
+destroy-lambda-api-gateway: ## Destroy infrastructure - Lambda API Gateway
+	(cd templates/lambda-api-gateway; terraform destroy -auto-approve)
+	rm -rf templates/lambda-api-gateway/*.zip
